@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Cors Client</title>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h3>CORS Test</h3>
+    <button id="btnGetData">Get Data</button>
+    <pre id="preOutput"></pre>
+    <script>
+      $(function () {
+        var getData = function () {
+          var url = "http://localhost:8888/api/students/";
+          $.get(url).always(showResponse);
+          return false;
+        };
+    
+        var showResponse = function (object) {
+          $("#preOutput").text(JSON.stringify(object, null, 4));
+        };
+    
+        $("#btnGetData").click(getData);
+      });
+    </script>
+    </body>
+</html>
+</html>
